@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Quiz</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="txt_sub_topic_title">Fill in file name as title</string>
+    <string name="txt_upload_a_file">Pick a PDF file?</string>
+    <string name="txt_file_selected">File selected. Change file?</string>
+    <string name="activity_upload_toolbar_title">Upload PDF</string>
+
+    <string name="processing">Processing ....</string>
+    <string name="alert">Amaran</string>
+    <string name="no_question">Tiada Soalan.</string>
+    <string name="next">SETERUSNYA</string>
+    <string name="previous">BELAKANG</string>
+    <string name="submit">Hantar</string>
+    <string name="submit_answer">Hantar Sekarang?</string>
+    <string name="quit">Quit?</string>
+
+    <string name="topic">Topik</string>
+    <string name="subtopic">SubTopik</string>
+
+    <string name="do_excercise">Buat Aktiviti</string>
+
+    <string name="topic_selection">Pemilihan Topik</string>
+    <string name="topic_subtopic_selection">Pemilihan Topik dan Subtopik</string>
+
+    <!-- Login page -->
+    <string name="txt_input_hint_username">Nama Pengunna</string>
+    <string name="txt_input_hint_password">Kata Laluan</string>
+    <string name="btn_login">Log Masuk</string>
+    <string name="btn_register">Tiada akaun? Daftarlah sekarang?</string>
+
+    <!-- Student panel -->
+    <string name="student_title">LAMAN UTAMA</string>
+    <string name="note_topic">BACA TOPIK</string>
+    <string name="exercise_ques">BUAT ACTIVITI</string>
+    <string name="trial_exam">BUAT LATIHAN</string>
+    <string name="final_exam">BUAT UJIAN</string>
+
+    <!-- Exercise activity -->
+    <string name="exercise_activity_title">AKTIVITI</string>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.fyp.quiz">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".LoginActivity"
+            android:windowSoftInputMode="stateAlwaysHidden"/>
+
+        <activity android:name=".ListStudentActivity" />
+        <activity android:name=".ListFinalScoreActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".ListExerciseScoreActivity" />
+        <activity android:name=".UploadPDFActivity" />
+        <activity android:name=".ListPDFActivity" />
+        <activity android:name=".ViewPDFActivity" />
+        <activity android:name=".TeacherActivity" />
+        <activity android:name=".StudentActivity" />
+        <activity android:name=".ChooseTopicExerciseActivity" />
+        <activity android:name=".ChooseTopicTrialActivity" />
+        <activity android:name=".ExerciseActivity" />
+        <activity android:name=".StudyNoteActivity" />
+        <activity android:name=".TrialActivity" />
+        <activity android:name=".FinalActivity" />
+        <activity android:name=".AnswerSheetActivity" />
+        <activity android:name=".ScoreActivity" />
+        <activity android:name=".ParentActivity" />
+
+    </application>
+
+</manifest>
