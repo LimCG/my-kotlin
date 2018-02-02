@@ -8,10 +8,10 @@ import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import kotlinx.android.synthetic.main.activity_score.*
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.request.JsonObjectRequest
+import kotlinx.android.synthetic.main.activity_list_trial_score.*
 import org.json.JSONException
 import org.json.JSONObject
 
@@ -19,10 +19,10 @@ import org.json.JSONObject
 /**
  * Created by limcg on 14/01/2018.
  */
-class ScoreActivity : AppCompatActivity() {
+class ListTrialScoreActivity : AppCompatActivity() {
 
     companion object {
-        private val TAG = ScoreActivity::class.java.simpleName
+        private val TAG = ListTrialScoreActivity::class.java.simpleName
     }
 
     lateinit var topicTitleArrayList : ArrayList<String>
@@ -33,7 +33,7 @@ class ScoreActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_score)
+        setContentView(R.layout.activity_list_trial_score)
 
         if(intent.hasExtra("is_parent"))
         {
@@ -109,7 +109,7 @@ class ScoreActivity : AppCompatActivity() {
                             else
                             {
                                 // no result
-                                Toast.makeText(this, "No have score", Toast.LENGTH_LONG).show()
+                                Toast.makeText(this, "Tiada Skor.", Toast.LENGTH_LONG).show()
 
                                 finish()
                             }
@@ -151,19 +151,19 @@ class ScoreActivity : AppCompatActivity() {
         for(i in 0 until 4)
         {
             val txt_view = TextView(this)
-            txt_view.textSize = 16f
+            txt_view.textSize = 14f
             txt_view.setTypeface(null, Typeface.BOLD)
 
 
             if(i == 0)
             {
-                txt_view.text = "Topic"
+                txt_view.text = "Topik"
                 txt_view.layoutParams = params_Topic
 
             }
             else
             {
-                txt_view.text = "Trial " + i
+                txt_view.text = "Percubaan " + i
                 txt_view.layoutParams = params
                 txt_view.gravity = Gravity.CENTER
             }
@@ -185,7 +185,7 @@ class ScoreActivity : AppCompatActivity() {
             val txt_topic = TextView(this)
             txt_topic.text = topicTitleArrayList.get(i)
             txt_topic.layoutParams = params_Topic
-            txt_topic.textSize = 14f
+            txt_topic.textSize = 12f
             txt_topic.setTypeface(null, Typeface.BOLD)
             row.addView(txt_topic)
 
@@ -194,7 +194,7 @@ class ScoreActivity : AppCompatActivity() {
                 if( scoreObjectArrayList.get(z).trial_topic.equals(topicTitleArrayList.get(i), true))
                 {
                     val txt_score = TextView(this)
-                    txt_score.textSize = 14f
+                    txt_score.textSize = 12f
                     txt_score.setTypeface(null, Typeface.BOLD)
                     txt_score.gravity = Gravity.CENTER
 

@@ -9,9 +9,6 @@ import kotlinx.android.synthetic.main.content_teacher.*
 
 class TeacherActivity : AppCompatActivity() {
 
-    var user_id : Int = 0
-    lateinit var user_name : String
-
     companion object {
 
         private val TAG = TeacherActivity::class.java.simpleName
@@ -21,7 +18,7 @@ class TeacherActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_teacher)
 
-        toolbar.title = "Teacher Panel"
+        toolbar.title = "Halaman Guru"
 
         btn_upload_pdf.setOnClickListener { view ->
 

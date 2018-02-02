@@ -19,14 +19,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="UPLOAD PDF"
+            android:text="MUAT NAIK PDF"
             android:id="@+id/btn_upload_pdf"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="LIST PDF"
+            android:text="SENARAI TOPIK"
             android:id="@+id/btn_list_pdf"/>
 
         <Button

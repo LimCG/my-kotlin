@@ -120,7 +120,7 @@ class ListExerciseScoreActivity : AppCompatActivity() {
                             else
                             {
                                 // No Have score
-                                Toast.makeText(this, "No have score.", Toast.LENGTH_LONG).show()
+                                Toast.makeText(this, "Tiada Skor.", Toast.LENGTH_LONG).show()
 
                                 finish()
                             }
@@ -169,7 +169,7 @@ class ListExerciseScoreActivity : AppCompatActivity() {
         for(i in 0 until 4)
         {
             val txt_view = TextView(this)
-            txt_view.textSize = 16f
+            txt_view.textSize = 14f
             txt_view.setTypeface(null, Typeface.BOLD)
 
             if(i == 0)
@@ -180,7 +180,7 @@ class ListExerciseScoreActivity : AppCompatActivity() {
             }
             else
             {
-                txt_view.text = "Trial " + i
+                txt_view.text = "Percubaan " + i
                 txt_view.layoutParams = params
                 txt_view.gravity = Gravity.CENTER
             }
@@ -200,26 +200,13 @@ class ListExerciseScoreActivity : AppCompatActivity() {
         {
             //Main topic head
             val row_main_header = TableRow(this)
+            val txt_view = TextView(this)
+            txt_view.textSize = 14f
+            txt_view.setTypeface(null, Typeface.BOLD)
+            txt_view.text = mainTopicTitleArrayList.get(i)
+            txt_view.layoutParams = params_Topic
 
-            for(u in 0 until 4)
-            {
-                val txt_view = TextView(this)
-                txt_view.textSize = 16f
-                txt_view.setTypeface(null, Typeface.BOLD)
-
-                if( u == 0 )
-                {
-                    txt_view.text = mainTopicTitleArrayList.get(i)
-                    txt_view.layoutParams = params_Topic
-                }
-                else
-                {
-                    txt_view.text = " "
-                    txt_view.layoutParams = params_Topic
-                }
-
-                row_main_header.addView(txt_view)
-            }
+            row_main_header.addView(txt_view)
 
             table_exercise_attempt.addView(row_main_header)
 
@@ -232,7 +219,7 @@ class ListExerciseScoreActivity : AppCompatActivity() {
                     val txt_topic = TextView(this)
                     txt_topic.text = "- " + subContainerArrayList.get(j).exercise_subtopic
                     txt_topic.layoutParams = params_Topic
-                    txt_topic.textSize = 14f
+                    txt_topic.textSize = 12f
                     txt_topic.setTypeface(null, Typeface.BOLD)
                     row_content.addView(txt_topic)
 

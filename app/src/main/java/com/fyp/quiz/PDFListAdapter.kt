@@ -81,8 +81,6 @@ class PDFListAdapter(val context: Context, val pdfStorage : ArrayList<PDFObject>
                                         // Fail to delete file
                                     }
 
-                                    //Toast.makeText(context, StatusMsg, Toast.LENGTH_LONG).show()
-
                                 } catch (e : JSONException) {
 
                                     Toast.makeText(context, "ERROR", Toast.LENGTH_LONG).show()

@@ -1,10 +1,8 @@
 package com.fyp.quiz
 
-import android.app.ProgressDialog
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -208,7 +206,7 @@ class ListPDFActivity : AppCompatActivity() {
                         val Status = JsonObj.getString("status")
                         val StatusMsg = JsonObj.getString("status_msg")
 
-                        if(Status.equals("OK"))
+                        if(Status.equals("OK", true))
                         {
                             val JsonArrayData = JsonObj.getJSONArray("data")
                             for(i in 0 until JsonArrayData.length())
@@ -230,12 +228,11 @@ class ListPDFActivity : AppCompatActivity() {
 
                             }
 
+                            //Toast.makeText(this@ListPDFActivity, StatusMsg, Toast.LENGTH_LONG).show()
+
                         }
 
                         setDataRecyclerView()
-
-                        Toast.makeText(this@ListPDFActivity, StatusMsg, Toast.LENGTH_LONG).show()
-
 
                     } catch (e : JSONException) {
 

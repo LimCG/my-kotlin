@@ -54,12 +54,6 @@ class StudyNoteActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        val pDialog = ProgressDialog(this)
-        pDialog.setMessage("Loading....")
-        pDialog.setCancelable(false)
-        pDialog.isIndeterminate = true
-        pDialog.show()
-
         val JsonRequest = JsonObjectRequest(Request.Method.POST, Constants.GET_TOPIC_LIST, null,
                 Response.Listener { response ->
 
@@ -97,12 +91,7 @@ class StudyNoteActivity : AppCompatActivity() {
                         finish()
                     }
 
-                    pDialog.dismiss()
-
                 }, Response.ErrorListener { error ->
-
-
-            pDialog.dismiss()
 
             Toast.makeText(this, "Error Loading.", Toast.LENGTH_LONG).show()
 
@@ -234,12 +223,11 @@ class StudyNoteActivity : AppCompatActivity() {
 
                             }
 
+                            Toast.makeText(this@StudyNoteActivity, StatusMsg, Toast.LENGTH_LONG).show()
+
                         }
 
                         setDataRecyclerView()
-
-                        Toast.makeText(this@StudyNoteActivity, StatusMsg, Toast.LENGTH_LONG).show()
-
 
                     } catch (e : JSONException) {
 

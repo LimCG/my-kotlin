@@ -1,16 +1,10 @@
 package com.fyp.quiz
 
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
-import com.android.volley.Request
-import com.android.volley.Response
-import com.android.volley.request.JsonObjectRequest
 import kotlinx.android.synthetic.main.activity_student.*
-import org.json.JSONException
 
 /**
  * Created by limcg on 02/01/2018.
@@ -62,7 +56,7 @@ class StudentActivity : AppCompatActivity() {
 
         btn_view_trial_score.setOnClickListener { view ->
 
-            startActivity(Intent(this, ScoreActivity::class.java))
+            startActivity(Intent(this, ListTrialScoreActivity::class.java))
 
         }
 

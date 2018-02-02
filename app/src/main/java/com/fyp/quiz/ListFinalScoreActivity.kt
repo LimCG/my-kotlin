@@ -2,7 +2,6 @@ package com.fyp.quiz
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.widget.ArrayAdapter
 import com.android.volley.Request
 import com.android.volley.Response
@@ -83,7 +82,7 @@ class ListFinalScoreActivity : AppCompatActivity() {
                                 val percentage = jsonArray.getJSONObject(i).getString("percentage")
                                 val datetime = jsonArray.getJSONObject(i).getString("datetime")
 
-                                val displayTxt = "Skor " + percentage + " %.        " + datetime
+                                val displayTxt = i.inc().toString() + ".  Skor " + percentage + "%        " + datetime
 
                                 arrayList.add(displayTxt)
                             }
