@@ -36,7 +36,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Topic: "/>
+                android:text="@string/topic"/>
 
             <Spinner
                 android:id="@+id/spinner_topic_upload"
@@ -46,7 +46,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="SubTopic:"
+                android:text="@string/subtopic"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="5dp"/>
 
@@ -76,14 +76,15 @@
                 android:layout_marginTop="30dp"
                 android:layout_gravity="center"
                 android:id="@+id/txt_upload_file"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/solid_black"
                 android:text="@string/txt_upload_a_file"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="Upload"
+                android:layout_margin="@dimen/btn_margin"
+                android:background="@color/primaryLightColor"
+                android:text="Upload Now"
                 android:id="@+id/btn_upload_now"/>
 
         </LinearLayout>

@@ -51,7 +51,7 @@ class ListFinalScoreActivity : AppCompatActivity() {
             user_id = MyPref.userIDPrefs.toString()
         }
 
-        toolbar.title = "UJIAN SKOR"
+        toolbar.title = "Final Exam Score"
         toolbar.setNavigationOnClickListener { view ->
             onBackPressed()
         }
@@ -82,7 +82,7 @@ class ListFinalScoreActivity : AppCompatActivity() {
                                 val percentage = jsonArray.getJSONObject(i).getString("percentage")
                                 val datetime = jsonArray.getJSONObject(i).getString("datetime")
 
-                                val displayTxt = i.inc().toString() + ".  Skor " + percentage + "%        " + datetime
+                                val displayTxt = i.inc().toString() + ".    Score " + percentage + "%   " + datetime
 
                                 arrayList.add(displayTxt)
                             }

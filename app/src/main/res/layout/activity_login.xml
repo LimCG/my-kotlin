@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
     tools:context=".LoginActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -31,13 +30,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="200dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/logo_quiz"
-                android:contentDescription="@null"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -75,14 +67,16 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/btn_margin"
+                    android:background="@color/primaryLightColor"
                     android:text="@string/btn_login"
                     android:id="@+id/btn_login"/>
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/btn_margin"
+                    android:background="@color/primaryLightColor"
                     android:text="@string/btn_register"
                     android:id="@+id/btn_register"/>
 

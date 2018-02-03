@@ -38,8 +38,9 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textSize="18sp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
-                android:text="Parent Info:"/>
+                android:text="Student Info:"/>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -50,7 +51,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:id="@+id/edt_register_parent_name"/>
+                    android:id="@+id/edt_register_child_name"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -63,7 +64,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:id="@+id/edt_register_parent_username"/>
+                    android:id="@+id/edt_register_child_username"/>
 
             </android.support.design.widget.TextInputLayout>
 
@@ -76,16 +77,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
-                    android:id="@+id/edt_register_parent_password"/>
+                    android:id="@+id/edt_register_child_password"/>
 
             </android.support.design.widget.TextInputLayout>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/btn_register_continue"
+                android:id="@+id/btn_register"
                 android:background="@color/primaryLightColor"
-                android:text="Continue"
+                android:text="Register Now"
                 android:layout_margin="@dimen/btn_margin"/>
 
         </LinearLayout>

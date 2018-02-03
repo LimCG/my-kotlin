@@ -167,7 +167,7 @@ class TrialActivity : AppCompatActivity(), QuestionFragment.OnResultOptionListen
             override fun getParams(): MutableMap<String, String> {
 
                 val param = HashMap<String, String>()
-                param.put("selected_topic", selectedTopic)
+                param.put("selected_topic_id", selectedTopicID.toString())
 
                 return param
             }
@@ -284,7 +284,7 @@ class TrialActivity : AppCompatActivity(), QuestionFragment.OnResultOptionListen
 
         val alertDialog = AlertDialog.Builder(this)
         alertDialog.setTitle("Alert")
-        alertDialog.setMessage("Quit Trial?")
+        alertDialog.setMessage("Quit Trial Exam?")
         alertDialog.setPositiveButton("Cancel", DialogInterface.OnClickListener { dialogInterface, i ->
 
             dialogInterface.dismiss()

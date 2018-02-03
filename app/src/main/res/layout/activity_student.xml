@@ -32,46 +32,96 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/note_topic"
-                android:id="@+id/btn_study_note"/>
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_margin="@dimen/btn_margin"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:background="@color/primaryLightColor"
+                    android:text="@string/note_topic"
+                    android:id="@+id/btn_study_note"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/btn_margin"
+                    android:layout_weight="1"
+                    android:background="@color/primaryLightColor"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:text="@string/exercise_ques"
+                    android:id="@+id/btn_exercise"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/btn_margin"
+                    android:layout_weight="1"
+                    android:background="@color/primaryLightColor"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:text="@string/trial_exam"
+                    android:id="@+id/btn_trial"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/btn_margin"
+                    android:layout_weight="1"
+                    android:background="@color/primaryLightColor"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:text="@string/final_exam"
+                    android:id="@+id/btn_final"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/view_exercise_score"
+                    android:layout_margin="@dimen/btn_margin"
+                    android:layout_weight="1"
+                    android:background="@color/primaryLightColor"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:id="@+id/btn_view_exercise_score"/>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/view_trial_score"
+                    android:layout_margin="@dimen/btn_margin"
+                    android:layout_weight="1"
+                    android:background="@color/primaryLightColor"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:id="@+id/btn_view_trial_score"/>
+
+            </LinearLayout>
+
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/exercise_ques"
-                android:id="@+id/btn_exercise"/>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/trial_exam"
-                android:id="@+id/btn_trial"/>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/final_exam"
-                android:id="@+id/btn_final"/>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="AKTIVITI SKOR"
-                android:id="@+id/btn_view_exercise_score"/>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="LATIHAN SKOR"
-                android:id="@+id/btn_view_trial_score"/>
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="UJIAN SKOR"
+                android:text="@string/view_final_score"
+                android:layout_margin="@dimen/btn_margin"
+                android:background="@color/primaryLightColor"
+                style="?android:attr/borderlessButtonStyle"
                 android:id="@+id/btn_view_final_score"/>
 
         </LinearLayout>

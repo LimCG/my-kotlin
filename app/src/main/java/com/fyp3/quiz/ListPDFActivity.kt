@@ -46,7 +46,7 @@ class ListPDFActivity : AppCompatActivity() {
         arrayListPDFObject = ArrayList<PDFObject>()
         setupRecyclerView()
 
-        toolbar.title = "PDF Notes"
+        toolbar.title = "Manage Notes"
         toolbar.setNavigationOnClickListener { view ->
 
             onBackPressed()
@@ -227,10 +227,9 @@ class ListPDFActivity : AppCompatActivity() {
                                 arrayListPDFObject.add(PdfObj)
 
                             }
-
-                            //Toast.makeText(this@ListPDFActivity, StatusMsg, Toast.LENGTH_LONG).show()
-
                         }
+
+                        Toast.makeText(this@ListPDFActivity, StatusMsg, Toast.LENGTH_LONG).show()
 
                         setDataRecyclerView()
 

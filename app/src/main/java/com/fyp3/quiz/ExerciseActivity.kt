@@ -83,7 +83,7 @@ class ExerciseActivity : AppCompatActivity(), QuestionFragment.OnResultOptionLis
 
         val progressDialog = Utils.showProgressDialog(this, resources.getString(R.string.processing))
 
-        val stringRequest = object : StringRequest(Request.Method.POST, Constants.GET_EXERCISE_QUESTION_URL,
+        val stringRequest = object : StringRequest(Method.POST, Constants.GET_EXERCISE_QUESTION_URL,
                 Response.Listener { response ->
 
                     Log.e(TAG, response)
@@ -194,7 +194,7 @@ class ExerciseActivity : AppCompatActivity(), QuestionFragment.OnResultOptionLis
             override fun getParams(): MutableMap<String, String> {
 
                 val param = HashMap<String, String>()
-                param.put("selected_subtopic", selectedSubTopic)
+                param.put("selected_subtopic_id", selectedSubTopicID.toString())
 
                 return param
             }

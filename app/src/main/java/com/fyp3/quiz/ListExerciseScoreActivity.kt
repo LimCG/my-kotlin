@@ -53,7 +53,7 @@ class ListExerciseScoreActivity : AppCompatActivity() {
         mainTopicTitleArrayList = ArrayList<String>()
         subContainerArrayList = ArrayList<ExerciseScoreObject>()
 
-        toolbar.title = "AKTIVITI SKOR"
+        toolbar.title = "Exercise Score"
         toolbar.setNavigationOnClickListener { view ->
             onBackPressed()
         }
@@ -92,6 +92,8 @@ class ListExerciseScoreActivity : AppCompatActivity() {
                                             val exercise_subtopic = json.getJSONObject(z).getString("exercise_subtopic")
                                             val percentage = json.getJSONObject(z).getInt("percentage")
                                             val exercise_result_id = json.getJSONObject(z).getInt("exercise_result_id")
+                                            val datetime = json.getJSONObject(z).getString("datetime")
+                                            val score_feedback = json.getJSONObject(z).getString("score_feedback")
 
                                             if(!mainTopicTitleArrayList.contains(exercise_topic))
                                             {
@@ -103,6 +105,8 @@ class ListExerciseScoreActivity : AppCompatActivity() {
                                             exerciseScoreObject.exercise_subtopic = exercise_subtopic
                                             exerciseScoreObject.percentage = percentage
                                             exerciseScoreObject.exercise_topic = exercise_topic
+                                            exerciseScoreObject.score_feedback = score_feedback
+                                            exerciseScoreObject.taken_datetime = datetime
 
                                             subContainerArrayList.add(exerciseScoreObject)
 
@@ -119,7 +123,7 @@ class ListExerciseScoreActivity : AppCompatActivity() {
                             else
                             {
                                 // No Have score
-                                Toast.makeText(this, "Tiada Skor.", Toast.LENGTH_LONG).show()
+                                Toast.makeText(this, "No have score.", Toast.LENGTH_LONG).show()
 
                                 finish()
                             }
@@ -137,7 +141,7 @@ class ListExerciseScoreActivity : AppCompatActivity() {
 
                 Utils.dismissProgressDialog(pDialog)
 
-                Toast.makeText(this, "Error!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "ERROR.", Toast.LENGTH_SHORT).show()
 
                 finish()
 
@@ -173,13 +177,26 @@ class ListExerciseScoreActivity : AppCompatActivity() {
 
             if(i == 0)
             {
-                txt_view.text = " "
+                txt_view.text = "Topic"
                 txt_view.layoutParams = params_Topic
+                txt_view.gravity = Gravity.CENTER
 
+            }
+            else if(i == 1)
+            {
+                txt_view.text = "DateTime"
+                txt_view.layoutParams = params
+                txt_view.gravity = Gravity.CENTER
+            }
+            else if(i == 2)
+            {
+                txt_view.text = "Score"
+                txt_view.layoutParams = params
+                txt_view.gravity = Gravity.CENTER
             }
             else
             {
-                txt_view.text = "Percubaan " + i
+                txt_view.text = "Feedback"
                 txt_view.layoutParams = params
                 txt_view.gravity = Gravity.CENTER
             }
@@ -200,7 +217,7 @@ class ListExerciseScoreActivity : AppCompatActivity() {
             //Main topic head
             val row_main_header = TableRow(this)
             val txt_view = TextView(this)
-            txt_view.textSize = 14f
+            txt_view.textSize = 16f
             txt_view.setTypeface(null, Typeface.BOLD)
             txt_view.text = mainTopicTitleArrayList.get(i)
             txt_view.layoutParams = params_Topic
@@ -211,53 +228,50 @@ class ListExerciseScoreActivity : AppCompatActivity() {
 
             for(j in 0 until subContainerArrayList.size)
             {
-                if(count == 0)
-                {
-                    row_content = TableRow(this)
-
-                    val txt_topic = TextView(this)
-                    txt_topic.text = "- " + subContainerArrayList.get(j).exercise_subtopic
-                    txt_topic.layoutParams = params_Topic
-                    txt_topic.textSize = 12f
-                    txt_topic.setTypeface(null, Typeface.BOLD)
-                    row_content.addView(txt_topic)
-
-                    //increment count
-                    count = count.inc()
-
-                }
-
                 if(subContainerArrayList.get(j).exercise_topic.equals(mainTopicTitleArrayList.get(i), true))
                 {
-                    val txt_score = TextView(this)
-                    txt_score.textSize = 14f
-                    txt_score.setTypeface(null, Typeface.BOLD)
-                    txt_score.gravity = Gravity.CENTER
+                    val data_row = TableRow(this)
 
-                    if( subContainerArrayList.get(j).percentage < 0 )
-                    {
-                        txt_score.text = "-"
-                    }
-                    else
-                    {
-                        txt_score.text = subContainerArrayList.get(j).percentage.toString() + " %"
+                    // Topic Column
+                    val txt_score_topic = TextView(this)
+                    txt_score_topic.layoutParams = params_Topic
+                    txt_score_topic.textSize = 12f
+                    txt_score_topic.setTypeface(null, Typeface.BOLD)
+                    txt_score_topic.text = subContainerArrayList.get(j).exercise_subtopic
 
-                    }
+                    data_row.addView(txt_score_topic)
 
-                    txt_score.layoutParams = params
-                    row_content!!.addView(txt_score)
+                    // DateTime Column
+                    val txt_score_datetime = TextView(this)
+                    txt_score_datetime.layoutParams = params
+                    txt_score_datetime.textSize = 12f
+                    txt_score_datetime.setTypeface(null, Typeface.BOLD)
+                    txt_score_datetime.gravity = Gravity.CENTER
+                    txt_score_datetime.text = subContainerArrayList.get(j).taken_datetime
 
-                    if(count == 3)
-                    {
-                        count = 0
+                    data_row.addView(txt_score_datetime)
 
-                        table_exercise_attempt.addView(row_content)
-                    }
-                    else
-                    {
-                        //increment count
-                        count = count.inc()
-                    }
+                    // Percentage Column
+                    val txt_score_percentage = TextView(this)
+                    txt_score_percentage.layoutParams = params
+                    txt_score_percentage.textSize = 12f
+                    txt_score_percentage.setTypeface(null, Typeface.BOLD)
+                    txt_score_percentage.gravity = Gravity.CENTER
+                    txt_score_percentage.text = subContainerArrayList.get(j).percentage.toString() + "%"
+
+                    data_row.addView(txt_score_percentage)
+
+                    // Score Feedback Column
+                    val txt_score_feedback = TextView(this)
+                    txt_score_feedback.layoutParams = params
+                    txt_score_feedback.textSize = 12f
+                    txt_score_feedback.setTypeface(null, Typeface.BOLD)
+                    txt_score_feedback.gravity = Gravity.CENTER
+                    txt_score_feedback.text = subContainerArrayList.get(j).score_feedback
+
+                    data_row.addView(txt_score_feedback)
+
+                    table_exercise_attempt.addView(data_row)
 
                 }
 

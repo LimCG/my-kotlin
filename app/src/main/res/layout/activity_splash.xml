@@ -8,11 +8,11 @@
     tools:context=".SplashActivity">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo_quiz"
-        android:contentDescription="@null"
-        android:layout_alignParentTop="true"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/main_page"
+        android:contentDescription="@null" />
 
     <ProgressBar
         android:layout_width="wrap_content"

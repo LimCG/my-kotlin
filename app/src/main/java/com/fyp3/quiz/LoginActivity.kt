@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-        toolbar.title = this.resources.getText(R.string.btn_login)
+        toolbar.title = "Score Science"
 
         btn_register.setOnClickListener{ view ->
 

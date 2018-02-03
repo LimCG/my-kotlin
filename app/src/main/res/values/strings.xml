@@ -8,35 +8,38 @@
     <string name="activity_upload_toolbar_title">Upload PDF</string>
 
     <string name="processing">Processing ....</string>
-    <string name="alert">Amaran</string>
-    <string name="no_question">Tiada Soalan.</string>
-    <string name="next">SETERUSNYA</string>
-    <string name="previous">BELAKANG</string>
-    <string name="submit">Hantar</string>
-    <string name="submit_answer">Hantar Sekarang?</string>
+    <string name="alert">Alert</string>
+    <string name="no_question">No Question.</string>
+    <string name="next">Next</string>
+    <string name="previous">Back</string>
+    <string name="submit">Submit</string>
+    <string name="submit_answer">Submit now?</string>
     <string name="quit">Quit?</string>
 
-    <string name="topic">Topik</string>
-    <string name="subtopic">SubTopik</string>
+    <string name="topic">Topic</string>
+    <string name="subtopic">SubTopic</string>
 
-    <string name="do_excercise">Buat Aktiviti</string>
+    <string name="do_excercise">Take Exercise</string>
 
-    <string name="topic_selection">Pemilihan Topik</string>
-    <string name="topic_subtopic_selection">Pemilihan Topik dan Subtopik</string>
+    <string name="topic_selection">Choose Topic</string>
+    <string name="topic_subtopic_selection">Choose Topic and Subtopic</string>
 
     <!-- Login page -->
-    <string name="txt_input_hint_username">Nama Pengunna</string>
-    <string name="txt_input_hint_password">Kata Laluan</string>
-    <string name="btn_login">Log Masuk</string>
-    <string name="btn_register">Tiada akaun? Daftarlah sekarang?</string>
+    <string name="txt_input_hint_username">Username</string>
+    <string name="txt_input_hint_password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_register">No Account? Register now?</string>
 
     <!-- Student panel -->
-    <string name="student_title">LAMAN UTAMA</string>
-    <string name="note_topic">BACA TOPIK</string>
-    <string name="exercise_ques">BUAT ACTIVITI</string>
-    <string name="trial_exam">BUAT LATIHAN</string>
-    <string name="final_exam">BUAT UJIAN</string>
+    <string name="student_title">Student</string>
+    <string name="note_topic">Study Notes</string>
+    <string name="exercise_ques">Try Exercise</string>
+    <string name="trial_exam">Take Trial Exam</string>
+    <string name="final_exam">Take Final Exam</string>
+    <string name="view_trial_score">View Trial Exam Score</string>
+    <string name="view_final_score">View Final Exam Score</string>
+    <string name="view_exercise_score">View Exercise Score</string>
 
     <!-- Exercise activity -->
-    <string name="exercise_activity_title">AKTIVITI</string>
+    <string name="exercise_activity_title">Exercise</string>
 </resources>

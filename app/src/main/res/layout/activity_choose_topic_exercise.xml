@@ -60,7 +60,8 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_margin="@dimen/btn_margin"
+                android:background="@color/primaryLightColor"
                 android:id="@+id/btn_go_to_exercise"
                 android:text="@string/do_excercise"/>
 

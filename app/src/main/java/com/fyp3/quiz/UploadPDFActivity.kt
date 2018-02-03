@@ -56,7 +56,7 @@ class UploadPDFActivity : AppCompatActivity() {
         arrayListSubTopic = ArrayList<String>()
         arrayListSubTopicID = ArrayList<Int>()
 
-        toolbar.title = this.resources.getString(R.string.activity_upload_toolbar_title)
+        toolbar.title = "Upload Notes"
         toolbar.setNavigationOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
 
@@ -65,14 +65,12 @@ class UploadPDFActivity : AppCompatActivity() {
 
         })
 
-        val pDialog = ProgressDialog(this)
-        pDialog.setMessage("Loading....")
-        pDialog.setCancelable(false)
-        pDialog.isIndeterminate = true
-        pDialog.show()
+        val pDialog = Utils.showProgressDialog(this, resources.getString(R.string.processing))
 
         val JsonRequest = JsonObjectRequest(Request.Method.POST, Constants.GET_TOPIC_LIST, null,
                 Response.Listener { response ->
+
+                    Utils.dismissProgressDialog(pDialog)
 
                     try {
 
@@ -108,12 +106,10 @@ class UploadPDFActivity : AppCompatActivity() {
                         finish()
                     }
 
-                    pDialog.dismiss()
-
                 }, Response.ErrorListener { error ->
 
 
-            pDialog.dismiss()
+            Utils.dismissProgressDialog(pDialog)
 
             Toast.makeText(this, "Error Loading.", Toast.LENGTH_LONG).show()
 
@@ -231,9 +227,9 @@ class UploadPDFActivity : AppCompatActivity() {
         btn_upload_now.setOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
 
-                val txt_file_title : String? = edt_upload_file_title.text.toString().trim()
+                val txt_file_title : String = edt_upload_file_title.text.toString().trim()
 
-                if( txt_file_title != null && txt_file_title.length > 0 )
+                if( txt_file_title.isNotEmpty() )
                 {
 
                     uploadPDF(filePath, selectedTopic, selectedSubTopic, txt_file_title)

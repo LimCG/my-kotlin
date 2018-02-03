@@ -25,7 +25,6 @@ class ListTrialScoreActivity : AppCompatActivity() {
         private val TAG = ListTrialScoreActivity::class.java.simpleName
     }
 
-    lateinit var topicTitleArrayList : ArrayList<String>
     lateinit var scoreObjectArrayList : ArrayList<ScoreObject>
 
     var is_parent : Boolean = false
@@ -49,10 +48,9 @@ class ListTrialScoreActivity : AppCompatActivity() {
             server_url = Constants.LIST_TRIAL_SCORE
         }
 
-        topicTitleArrayList = ArrayList<String>()
         scoreObjectArrayList = ArrayList<ScoreObject>()
 
-        toolbar.title = "LATIHAN SKOR"
+        toolbar.title = "Trial Exam Score"
         toolbar.setNavigationOnClickListener { view ->
 
             onBackPressed()
@@ -80,19 +78,21 @@ class ListTrialScoreActivity : AppCompatActivity() {
 
                                     for(z in 0 until innerArray.length())
                                     {
-                                        val trial_topic = innerArray.getJSONObject(z).getString("trial_topic")
-
-                                        if( !topicTitleArrayList.contains(trial_topic))
-                                        {
-                                            topicTitleArrayList.add(trial_topic)
-                                        }
 
                                         val scoreObj = ScoreObject()
                                         val percentage = innerArray.getJSONObject(z).getInt("percentage")
                                         scoreObj.percentage = percentage
 
+                                        val score_feedback = innerArray.getJSONObject(z).getString("score_feedback")
+                                        scoreObj.score_feedback = score_feedback
+
+                                        val taken_datetime = innerArray.getJSONObject(z).getString("datetime")
+                                        scoreObj.taken_datetime = taken_datetime
+
                                         val trial_result_id = innerArray.getJSONObject(z).getInt("trial_result_id")
                                         scoreObj.trial_result_id = trial_result_id
+
+                                        val trial_topic = innerArray.getJSONObject(z).getString("trial_topic")
                                         scoreObj.trial_topic = trial_topic
 
                                         scoreObjectArrayList.add(scoreObj)
@@ -109,7 +109,7 @@ class ListTrialScoreActivity : AppCompatActivity() {
                             else
                             {
                                 // no result
-                                Toast.makeText(this, "Tiada Skor.", Toast.LENGTH_LONG).show()
+                                Toast.makeText(this, "No have score.", Toast.LENGTH_LONG).show()
 
                                 finish()
                             }
@@ -117,7 +117,7 @@ class ListTrialScoreActivity : AppCompatActivity() {
 
                         } catch (e : JSONException) {
 
-                            Toast.makeText(this, "Error.", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this, "ERROR.", Toast.LENGTH_LONG).show()
 
                             finish()
 
@@ -125,7 +125,7 @@ class ListTrialScoreActivity : AppCompatActivity() {
 
                     }, Response.ErrorListener { error ->
 
-                Toast.makeText(this, "Error.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "ERROR.", Toast.LENGTH_LONG).show()
 
                 finish()
 
@@ -141,7 +141,7 @@ class ListTrialScoreActivity : AppCompatActivity() {
 
     private fun generateTableLayout()
     {
-        val params_Topic = TableRow.LayoutParams(0, TableRow.LayoutParams.WRAP_CONTENT, 1f)
+        val params_Topic = TableRow.LayoutParams(0, TableRow.LayoutParams.WRAP_CONTENT, 1.2f)
         params_Topic.setMargins(0, 20, 0, 20)
         val params = TableRow.LayoutParams(0, TableRow.LayoutParams.WRAP_CONTENT, 0.5f)
         params.setMargins(0, 20, 0, 20)
@@ -154,16 +154,28 @@ class ListTrialScoreActivity : AppCompatActivity() {
             txt_view.textSize = 14f
             txt_view.setTypeface(null, Typeface.BOLD)
 
-
             if(i == 0)
             {
-                txt_view.text = "Topik"
+                txt_view.text = "Topic"
                 txt_view.layoutParams = params_Topic
+                txt_view.gravity = Gravity.CENTER
 
+            }
+            else if(i == 1)
+            {
+                txt_view.text = "DateTime"
+                txt_view.layoutParams = params
+                txt_view.gravity = Gravity.CENTER
+            }
+            else if(i == 2)
+            {
+                txt_view.text = "Score"
+                txt_view.layoutParams = params
+                txt_view.gravity = Gravity.CENTER
             }
             else
             {
-                txt_view.text = "Percubaan " + i
+                txt_view.text = "Feedback"
                 txt_view.layoutParams = params
                 txt_view.gravity = Gravity.CENTER
             }
@@ -179,45 +191,50 @@ class ListTrialScoreActivity : AppCompatActivity() {
         line.setBackgroundColor(Color.BLACK)
         table_trial_attempt.addView(line)
 
-        for(i in 0 until topicTitleArrayList.size)
+        for(z in 0 until scoreObjectArrayList.size)
         {
-            val row = TableRow(this); // Row 1
-            val txt_topic = TextView(this)
-            txt_topic.text = topicTitleArrayList.get(i)
-            txt_topic.layoutParams = params_Topic
-            txt_topic.textSize = 12f
-            txt_topic.setTypeface(null, Typeface.BOLD)
-            row.addView(txt_topic)
+            val data_row = TableRow(this)
 
-            for(z in 0 until scoreObjectArrayList.size)
-            {
-                if( scoreObjectArrayList.get(z).trial_topic.equals(topicTitleArrayList.get(i), true))
-                {
-                    val txt_score = TextView(this)
-                    txt_score.textSize = 12f
-                    txt_score.setTypeface(null, Typeface.BOLD)
-                    txt_score.gravity = Gravity.CENTER
+            // Topic Column
+            val txt_score_topic = TextView(this)
+            txt_score_topic.layoutParams = params_Topic
+            txt_score_topic.textSize = 12f
+            txt_score_topic.setTypeface(null, Typeface.BOLD)
+            txt_score_topic.text = scoreObjectArrayList.get(z).trial_topic
 
-                    if( scoreObjectArrayList.get(z).percentage < 0 )
-                    {
-                        txt_score.text = "-"
-                    }
-                    else
-                    {
-                        txt_score.text = scoreObjectArrayList.get(z).percentage.toString() + " %"
+            data_row.addView(txt_score_topic)
 
+            // DateTime Column
+            val txt_score_datetime = TextView(this)
+            txt_score_datetime.layoutParams = params
+            txt_score_datetime.textSize = 12f
+            txt_score_datetime.setTypeface(null, Typeface.BOLD)
+            txt_score_datetime.gravity = Gravity.CENTER
+            txt_score_datetime.text = scoreObjectArrayList.get(z).taken_datetime
 
-                    }
+            data_row.addView(txt_score_datetime)
 
-                    txt_score.layoutParams = params
-                    row.addView(txt_score)
+            // Percentage Column
+            val txt_score_percentage = TextView(this)
+            txt_score_percentage.layoutParams = params
+            txt_score_percentage.textSize = 12f
+            txt_score_percentage.setTypeface(null, Typeface.BOLD)
+            txt_score_percentage.gravity = Gravity.CENTER
+            txt_score_percentage.text = scoreObjectArrayList.get(z).percentage.toString() + "%"
 
-                }
+            data_row.addView(txt_score_percentage)
 
-            }
+            // Score Feedback Column
+            val txt_score_feedback = TextView(this)
+            txt_score_feedback.layoutParams = params
+            txt_score_feedback.textSize = 12f
+            txt_score_feedback.setTypeface(null, Typeface.BOLD)
+            txt_score_feedback.gravity = Gravity.CENTER
+            txt_score_feedback.text = scoreObjectArrayList.get(z).score_feedback
 
-            table_trial_attempt.addView(row)
+            data_row.addView(txt_score_feedback)
 
+            table_trial_attempt.addView(data_row)
         }
 
     }

@@ -18,7 +18,7 @@ class TeacherActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_teacher)
 
-        toolbar.title = "Halaman Guru"
+        toolbar.title = "Teacher Control Panel"
 
         btn_upload_pdf.setOnClickListener { view ->
 

@@ -31,7 +31,7 @@ class ListStudentActivity : AppCompatActivity() {
         studentArrayList = ArrayList<StudentObject>()
         studentFullNameList = ArrayList<String>()
 
-        toolbar.title = "All Students"
+        toolbar.title = "Student Listing"
         toolbar.setNavigationOnClickListener { view ->
             onBackPressed()
         }
