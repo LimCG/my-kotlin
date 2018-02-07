@@ -20,13 +20,6 @@ class TeacherActivity : AppCompatActivity() {
 
         toolbar.title = "Teacher Control Panel"
 
-        btn_upload_pdf.setOnClickListener { view ->
-
-            val intent = Intent(this, UploadPDFActivity::class.java)
-            startActivity(intent)
-
-        }
-
         btn_list_pdf.setOnClickListener { view ->
 
             val intent = Intent(this, ListPDFActivity::class.java)

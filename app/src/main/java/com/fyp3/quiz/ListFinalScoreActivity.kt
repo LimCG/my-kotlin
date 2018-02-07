@@ -3,6 +3,7 @@ package com.fyp3.quiz
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.request.JsonObjectRequest
@@ -69,11 +70,6 @@ class ListFinalScoreActivity : AppCompatActivity() {
                             val arrayList = ArrayList<String>()
                             val jsonArray = response.getJSONArray("data")
 
-                            if(arrayList.size > 0)
-                            {
-                                arrayList.clear()
-                            }
-
                             for(i in 0 until jsonArray.length())
                             {
                                 val percentage = jsonArray.getJSONObject(i).getString("percentage")
@@ -86,6 +82,12 @@ class ListFinalScoreActivity : AppCompatActivity() {
 
                             listview_list_final.adapter = ArrayAdapter<String>(this@ListFinalScoreActivity,
                                     android.R.layout.simple_expandable_list_item_1, arrayList)
+                        }
+                        else
+                        {
+                            finish()
+
+                            Toast.makeText(this, "No result.", Toast.LENGTH_LONG).show()
                         }
 
 

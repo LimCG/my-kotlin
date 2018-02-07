@@ -3,6 +3,7 @@ package com.fyp3.quiz
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import kotlinx.android.synthetic.main.activity_view_pdf.*
@@ -33,6 +34,8 @@ class ViewPDFActivity : AppCompatActivity() {
         }
 
         webview_pdf.settings.javaScriptEnabled = true
+        webview_pdf.webChromeClient = WebChromeClient()
+        webview_pdf.settings.setAllowFileAccess(true);
         webview_pdf.loadUrl("http://docs.google.com/gview?embedded=true&url=" + Constants.BASE_URL + pdf_path)
         webview_pdf.webViewClient = object : WebViewClient() {
 

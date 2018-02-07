@@ -14,7 +14,6 @@ import org.json.JSONException
 import org.json.JSONObject
 import org.json.JSONArray
 
-
 class AnswerSheetActivity : AppCompatActivity() {
 
     companion object {

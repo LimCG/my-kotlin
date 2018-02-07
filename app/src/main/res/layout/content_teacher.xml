@@ -21,15 +21,6 @@
             android:layout_gravity="center"
             android:layout_margin="@dimen/btn_margin"
             android:background="@color/primaryLightColor"
-            android:text="Upload Notes"
-            android:id="@+id/btn_upload_pdf"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/btn_margin"
-            android:background="@color/primaryLightColor"
             android:text="Notes Listing"
             android:id="@+id/btn_list_pdf"/>
 
