@@ -1,8 +1,5 @@
 package com.fyp3.quiz
 
-/**
- * Created by limcg on 14/01/2018.
- */
 class ScoreObject {
 
     var percentage : Int = 0

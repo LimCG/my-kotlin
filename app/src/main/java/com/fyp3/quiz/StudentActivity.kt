@@ -6,9 +6,6 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_student.*
 
-/**
- * Created by limcg on 02/01/2018.
- */
 class StudentActivity : AppCompatActivity() {
 
     companion object {

@@ -1,15 +1,10 @@
 package com.fyp3.quiz
 
-/**
- * Created by limcg on 28/12/2017.
- */
 class Constants {
 
     companion object {
 
-//        private val BASE_URL = "https://fypfypmmu.000webhostapp.com/"
-
-        val BASE_URL = "http://188.166.186.198/quiz3/"
+        val BASE_URL = "https://score-science.000webhostapp.com/"
         val UPLOAD_PDF_URL = BASE_URL + "upload.php"
         val GET_PDF_LIST = BASE_URL + "list_pdf.php"
         val REMOVE_PDF = BASE_URL + "remove_pdf.php"

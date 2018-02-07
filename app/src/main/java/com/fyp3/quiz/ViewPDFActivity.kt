@@ -7,9 +7,6 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import kotlinx.android.synthetic.main.activity_view_pdf.*
 
-/**
- * Created by limcg on 31/12/2017.
- */
 class ViewPDFActivity : AppCompatActivity() {
 
     lateinit var pdf_path : String

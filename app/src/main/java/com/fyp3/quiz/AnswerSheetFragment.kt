@@ -13,9 +13,6 @@ import kotlinx.android.synthetic.main.fragment_answer_sheet_objective.*
 import kotlinx.android.synthetic.main.fragment_answer_sheet_subjective.*
 import java.io.Serializable
 
-/**
- * Created by limcg on 10/01/2018.
- */
 class AnswerSheetFragment : Fragment() {
 
     companion object {

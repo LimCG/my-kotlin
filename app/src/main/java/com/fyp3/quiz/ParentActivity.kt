@@ -5,9 +5,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_parent.*
 
-/**
- * Created by limcg on 16/01/2018.
- */
 class ParentActivity : AppCompatActivity() {
 
     companion object {

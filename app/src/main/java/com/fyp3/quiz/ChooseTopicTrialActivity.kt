@@ -13,9 +13,6 @@ import com.android.volley.request.JsonObjectRequest
 import kotlinx.android.synthetic.main.activity_choose_topic_trial.*
 import org.json.JSONException
 
-/**
- * Created by limcg on 06/01/2018.
- */
 class ChooseTopicTrialActivity : AppCompatActivity() {
 
     companion object {

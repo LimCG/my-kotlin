@@ -12,9 +12,6 @@ import com.android.volley.Response
 import com.android.volley.request.JsonObjectRequest
 import kotlinx.android.synthetic.main.activity_list_student.*
 
-/**
- * Created by limcg on 01/02/2018.
- */
 class ListStudentActivity : AppCompatActivity() {
 
     companion object {

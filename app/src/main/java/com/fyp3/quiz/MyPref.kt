@@ -3,9 +3,6 @@ package com.fyp3.quiz
 import android.content.Context
 import android.content.SharedPreferences
 
-/**
- * Created by limcg on 06/01/2018.
- */
 class MyPref {
 
     companion object {

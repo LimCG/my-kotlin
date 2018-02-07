@@ -17,9 +17,6 @@ import kotlinx.android.synthetic.main.activity_list_exercise_score.*
 import org.json.JSONException
 import org.json.JSONObject
 
-/**
- * Created by limcg on 26/01/2018.
- */
 class ListExerciseScoreActivity : AppCompatActivity() {
 
     companion object {

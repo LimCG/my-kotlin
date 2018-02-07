@@ -11,9 +11,6 @@ import kotlinx.android.synthetic.main.activity_login.*
 import org.json.JSONException
 import org.json.JSONObject
 
-/**
- * Created by limcg on 01/01/2018.
- */
 class LoginActivity : AppCompatActivity() {
 
     companion object {

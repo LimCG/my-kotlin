@@ -15,9 +15,6 @@ import org.json.JSONObject
 import org.json.JSONArray
 
 
-/**
- * Created by limcg on 08/01/2018.
- */
 class AnswerSheetActivity : AppCompatActivity() {
 
     companion object {

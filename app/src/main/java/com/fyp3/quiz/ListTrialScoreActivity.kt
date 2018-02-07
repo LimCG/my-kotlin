@@ -15,10 +15,6 @@ import kotlinx.android.synthetic.main.activity_list_trial_score.*
 import org.json.JSONException
 import org.json.JSONObject
 
-
-/**
- * Created by limcg on 14/01/2018.
- */
 class ListTrialScoreActivity : AppCompatActivity() {
 
     companion object {

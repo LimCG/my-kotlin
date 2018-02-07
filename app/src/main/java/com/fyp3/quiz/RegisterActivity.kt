@@ -11,9 +11,6 @@ import kotlinx.android.synthetic.main.activity_register.*
 import org.json.JSONException
 import org.json.JSONObject
 
-/**
- * Created by limcg on 28/01/2018.
- */
 class RegisterActivity : AppCompatActivity() {
 
     companion object {

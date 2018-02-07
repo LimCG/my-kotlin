@@ -15,9 +15,6 @@ import kotlinx.android.synthetic.main.activity_choose_topic_exercise.*
 import org.json.JSONException
 import org.json.JSONObject
 
-/**
- * Created by limcg on 06/01/2018.
- */
 class ChooseTopicExerciseActivity : AppCompatActivity() {
 
     companion object {

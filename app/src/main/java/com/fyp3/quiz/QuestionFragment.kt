@@ -14,9 +14,6 @@ import android.widget.*
 import org.json.JSONArray
 import java.io.Serializable
 
-/**
- * Created by limcg on 03/01/2018.
- */
 class QuestionFragment : Fragment() {
 
     interface OnResultOptionListener {

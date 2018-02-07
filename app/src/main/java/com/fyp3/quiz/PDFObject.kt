@@ -1,8 +1,5 @@
 package com.fyp3.quiz
 
-/**
- * Created by limcg on 31/12/2017.
- */
 class PDFObject {
 
     var pdf_id : Int = 0

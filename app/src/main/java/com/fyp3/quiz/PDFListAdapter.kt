@@ -14,9 +14,6 @@ import kotlinx.android.synthetic.main.cardview_pdf_list.view.*
 import org.json.JSONException
 import org.json.JSONObject
 
-/**
- * Created by limcg on 31/12/2017.
- */
 class PDFListAdapter(val context: Context, val pdfStorage : ArrayList<PDFObject>, val isStudent : Boolean) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {

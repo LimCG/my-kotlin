@@ -3,9 +3,6 @@ package com.fyp3.quiz
 import android.app.ProgressDialog
 import android.content.Context
 
-/**
- * Created by limcg on 01/01/2018.
- */
 class Utils {
 
     companion object {

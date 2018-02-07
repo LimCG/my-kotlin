@@ -5,9 +5,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 
-/**
- * Created by limcg on 24/01/2018.
- */
 class SplashActivity : AppCompatActivity() {
 
     private var mDelayHandler: Handler? = null

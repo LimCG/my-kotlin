@@ -2,9 +2,6 @@ package com.fyp3.quiz
 
 import java.io.Serializable
 
-/**
- * Created by limcg on 02/01/2018.
- */
 class QuesObject : Serializable {
 
     var ques_id : Int = 0

@@ -15,9 +15,6 @@ import kotlinx.android.synthetic.main.activity_list_pdf.*
 import org.json.JSONException
 import org.json.JSONObject
 
-/**
- * Created by limcg on 30/12/2017.
- */
 class StudyNoteActivity : AppCompatActivity() {
 
     companion object {

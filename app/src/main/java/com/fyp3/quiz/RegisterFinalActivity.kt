@@ -11,9 +11,6 @@ import kotlinx.android.synthetic.main.activity_register_final.*
 import org.json.JSONException
 import org.json.JSONObject
 
-/**
- * Created by limcg on 03/02/2018.
- */
 class RegisterFinalActivity : AppCompatActivity() {
 
     companion object {

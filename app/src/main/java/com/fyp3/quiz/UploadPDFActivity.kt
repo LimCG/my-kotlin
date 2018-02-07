@@ -23,9 +23,6 @@ import kotlinx.android.synthetic.main.activity_upload_pdf.*
 import org.json.JSONException
 import org.json.JSONObject
 
-/**
- * Created by limcg on 27/12/2017.
- */
 class UploadPDFActivity : AppCompatActivity() {
 
     lateinit var filePath : String

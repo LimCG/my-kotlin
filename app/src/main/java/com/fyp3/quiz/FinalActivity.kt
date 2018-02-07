@@ -15,9 +15,6 @@ import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 
-/**
- * Created by limcg on 02/01/2018.
- */
 class FinalActivity : AppCompatActivity(), QuestionFragment.OnResultOptionListener {
 
     companion object {

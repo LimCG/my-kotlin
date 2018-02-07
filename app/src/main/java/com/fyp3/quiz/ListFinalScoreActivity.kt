@@ -10,9 +10,6 @@ import kotlinx.android.synthetic.main.activity_list_final_score.*
 import org.json.JSONException
 import org.json.JSONObject
 
-/**
- * Created by limcg on 01/02/2018.
- */
 class ListFinalScoreActivity : AppCompatActivity() {
 
     companion object {

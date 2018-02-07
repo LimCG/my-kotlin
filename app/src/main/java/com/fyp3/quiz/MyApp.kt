@@ -6,9 +6,6 @@ import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.toolbox.Volley
 
-/**
- * Created by limcg on 26/12/2017.
- */
 class MyApp : Application() {
 
     companion object {
