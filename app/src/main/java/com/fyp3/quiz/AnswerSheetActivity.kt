@@ -91,8 +91,12 @@ class AnswerSheetActivity : AppCompatActivity() {
             jo.put("exam_type", exam_type)
             jo.put("user_id", MyPref.userIDPrefs)
 
+            val pDialog = Utils.showProgressDialog(this, resources.getString(R.string.processing))
+
             val JsonRequest = JsonObjectRequest(Request.Method.POST, Constants.CHECK_ANSWER_URL,
                     jo, Response.Listener { response ->
+
+                Utils.dismissProgressDialog(pDialog)
 
                try {
 
@@ -136,6 +140,10 @@ class AnswerSheetActivity : AppCompatActivity() {
                            {
                                Ques.your_answer = obj.getString("your_answer")
                            }
+                           else
+                           {
+                               Ques.your_answer = ""
+                           }
 
                            questionArrayList.add(i, Ques)
 
@@ -157,6 +165,8 @@ class AnswerSheetActivity : AppCompatActivity() {
                }
 
             }, Response.ErrorListener { error ->
+
+                Utils.dismissProgressDialog(pDialog)
 
                 Log.i(TAG, error.toString())
             })

@@ -86,9 +86,9 @@ class ListPDFActivity : AppCompatActivity() {
                         Toast.makeText(this, "Error Loading.", Toast.LENGTH_LONG).show()
 
                         finish()
-                    }
 
-                    Utils.dismissProgressDialog(pDialog)
+                        Utils.dismissProgressDialog(pDialog)
+                    }
 
                 }, Response.ErrorListener { error ->
 
@@ -124,6 +124,8 @@ class ListPDFActivity : AppCompatActivity() {
                 val stringRequest = object : StringRequest(Request.Method.POST, Constants.GET_SUBTOPIC_LIST,
                         Response.Listener { response ->
 
+                            Utils.dismissProgressDialog(pDialog)
+
                             try {
 
                                 val jsonObj = JSONObject(response)
@@ -152,10 +154,14 @@ class ListPDFActivity : AppCompatActivity() {
 
                             } catch (e : JSONException) {
 
+                                Utils.dismissProgressDialog(pDialog)
+
                                 // Json Exception
                             }
 
                         }, Response.ErrorListener { error ->
+
+                    Utils.dismissProgressDialog(pDialog)
 
 
                     // Error response
@@ -185,15 +191,15 @@ class ListPDFActivity : AppCompatActivity() {
 
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
 
-                if( arrayListPDFObject.size > 0 )
-                {
-                    arrayListPDFObject.clear()
-                }
-
                 val pDialog2 = Utils.showProgressDialog(this@ListPDFActivity, resources.getString(R.string.processing))
 
                 val PostRequest = object : StringRequest(Request.Method.POST, Constants.GET_PDF_LIST,
                         Response.Listener { response ->
+
+                            if( arrayListPDFObject.size > 0 )
+                            {
+                                arrayListPDFObject.clear()
+                            }
 
                             Utils.dismissProgressDialog(pDialog2)
 
@@ -233,6 +239,7 @@ class ListPDFActivity : AppCompatActivity() {
                     } catch (e : JSONException) {
 
                         // Server Error
+                        Utils.dismissProgressDialog(pDialog2)
 
                     }
 
@@ -246,7 +253,7 @@ class ListPDFActivity : AppCompatActivity() {
                     override fun getParams(): MutableMap<String, String> {
 
                         val params = HashMap<String, String>()
-                        params.put("note_subtopic", parent.getItemAtPosition(position).toString())
+                        params.put("note_subtopic", arrayListSubTopicID.get(position).toString())
 
                         return params
                     }
