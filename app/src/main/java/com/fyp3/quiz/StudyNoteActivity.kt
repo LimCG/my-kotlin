@@ -239,7 +239,7 @@ class StudyNoteActivity : AppCompatActivity() {
                     override fun getParams(): MutableMap<String, String> {
 
                         val params = HashMap<String, String>()
-                        params.put("note_subtopic", parent.getItemAtPosition(position).toString())
+                        params.put("note_subtopic", arrayListSubTopicID.get(position).toString())
 
                         return params
                     }

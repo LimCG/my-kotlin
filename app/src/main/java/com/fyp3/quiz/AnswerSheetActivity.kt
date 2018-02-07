@@ -142,7 +142,7 @@ class AnswerSheetActivity : AppCompatActivity() {
                            }
                            else
                            {
-                               Ques.your_answer = ""
+                               Ques.your_answer = "-"
                            }
 
                            questionArrayList.add(i, Ques)
