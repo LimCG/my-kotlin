@@ -1,11 +1,13 @@
 package com.fyp3.quiz
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.ListView
 import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
@@ -58,18 +60,67 @@ class ListStudentActivity : AppCompatActivity() {
                         val arrayAdapter = ArrayAdapter<String>(this@ListStudentActivity,
                                 android.R.layout.simple_expandable_list_item_1, studentFullNameList)
                         listview_list_student.adapter = arrayAdapter
-                        listview_list_student.setOnItemClickListener(object : AdapterView.OnItemClickListener {
+                        listview_list_student.onItemClickListener = (object : AdapterView.OnItemClickListener {
 
                             override fun onItemClick(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
 
                                 val student_id = studentArrayList.get(position).student_id
 
-                                val intent = Intent(this@ListStudentActivity, ListFinalScoreActivity::class.java)
-                                intent.putExtra("user_id", student_id)
+                                val selectionTitleArray = arrayOf("List Exercise Score", "List Trial Score", "List Final Score")
+                                val customDialog = Dialog(this@ListStudentActivity)
+                                customDialog.setContentView(R.layout.custom_dialog_listview)
+                                customDialog.setTitle("Selection:")
+                                val listView = customDialog.findViewById<ListView>(R.id.listview_custom_dialog)
+                                val adapter = ArrayAdapter(this@ListStudentActivity,
+                                        android.R.layout.simple_expandable_list_item_1, selectionTitleArray)
+                                listView.adapter = adapter
+                                listView.onItemClickListener = (object : AdapterView.OnItemClickListener {
+                                    override fun onItemClick(p0: AdapterView<*>?, p1: View?, position: Int, p3: Long) {
 
-                                startActivity(intent)
+                                        when(position)
+                                        {
+                                            0 -> {
+
+                                                val intent = Intent(this@ListStudentActivity, ListExerciseScoreActivity::class.java)
+                                                intent.putExtra("user_id", student_id)
+
+                                                startActivity(intent)
+
+                                            }
+
+                                            1 -> {
+
+                                                val intent = Intent(this@ListStudentActivity, ListTrialScoreActivity::class.java)
+                                                intent.putExtra("user_id", student_id)
+
+                                                startActivity(intent)
+
+                                            }
+
+                                            2 -> {
+
+                                                val intent = Intent(this@ListStudentActivity, ListFinalScoreActivity::class.java)
+                                                intent.putExtra("user_id", student_id)
+
+                                                startActivity(intent)
+
+                                            }
+
+                                            else -> {
+                                                // Error on selection
+                                            }
+
+                                        }
+
+                                        customDialog.dismiss()
+
+                                    }
+                                })
+
+                                customDialog.show()
 
                             }
+
 
                         })
 

@@ -60,6 +60,7 @@ class ListFinalScoreActivity : AppCompatActivity() {
             jo.put("user_id", user_id)
 
             val pDialog = Utils.showProgressDialog(this@ListFinalScoreActivity, resources.getString(R.string.processing))
+
             val request = JsonObjectRequest(Request.Method.POST, server_url, jo,
                     Response.Listener { response ->
 
@@ -94,6 +95,10 @@ class ListFinalScoreActivity : AppCompatActivity() {
                     }, Response.ErrorListener { error ->
 
                 Utils.dismissProgressDialog(pDialog)
+
+                finish()
+
+                Toast.makeText(this, "Error.", Toast.LENGTH_LONG).show()
 
             })
 

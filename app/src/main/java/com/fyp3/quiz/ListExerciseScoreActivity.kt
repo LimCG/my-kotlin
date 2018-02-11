@@ -28,6 +28,7 @@ class ListExerciseScoreActivity : AppCompatActivity() {
 
     var is_parent : Boolean = false
     lateinit var server_url : String
+    lateinit var user_id : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +48,15 @@ class ListExerciseScoreActivity : AppCompatActivity() {
             server_url = Constants.LIST_EXERCISE_SCORE
         }
 
+        if(intent.hasExtra("user_id"))
+        {
+            user_id = intent.getStringExtra("user_id")
+        }
+        else
+        {
+            user_id = MyPref.userIDPrefs.toString()
+        }
+
         mainTopicTitleArrayList = ArrayList<String>()
         subContainerArrayList = ArrayList<ExerciseScoreObject>()
 
@@ -58,7 +68,7 @@ class ListExerciseScoreActivity : AppCompatActivity() {
         try {
 
             val jo = JSONObject()
-            jo.put("user_id", MyPref.userIDPrefs)
+            jo.put("user_id", user_id)
 
             val pDialog = Utils.showProgressDialog(this, resources.getString(R.string.processing))
 
