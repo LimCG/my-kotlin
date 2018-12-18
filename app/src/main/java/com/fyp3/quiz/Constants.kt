@@ -4,7 +4,8 @@ class Constants {
 
     companion object {
 
-        val BASE_URL = "https://score-science.000webhostapp.com/"
+        //val BASE_URL = "https://score-science.000webhostapp.com/"
+        val BASE_URL = "http://188.166.186.198/quiz2/"
         val UPLOAD_PDF_URL = BASE_URL + "upload.php"
         val GET_PDF_LIST = BASE_URL + "list_pdf.php"
         val REMOVE_PDF = BASE_URL + "remove_pdf.php"

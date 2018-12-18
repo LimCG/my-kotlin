@@ -206,7 +206,7 @@ class ChooseTopicExerciseActivity : AppCompatActivity() {
             intent.putExtra("intent_subtopic", selectedSubTopic)
             intent.putExtra("intent_subtopic_id", selectedSubTopicID)
             startActivity(intent)
-            finish()
+//            finish()
         }
 
 

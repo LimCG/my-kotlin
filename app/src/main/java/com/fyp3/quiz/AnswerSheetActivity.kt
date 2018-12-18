@@ -104,7 +104,8 @@ class AnswerSheetActivity : AppCompatActivity() {
                    val total_ques = response.getInt("total_question")
                    val correct_count = response.getInt("correct_count")
 
-                   txt_answer_sheet_score.text = "Score: " + correct_count + " / " + total_ques + " = " + percentage
+                   //txt_answer_sheet_score.text = "Score: " + correct_count + " / " + total_ques + " = " + percentage
+                   txt_answer_sheet_score.text = "Score: " + correct_count + " / " + total_ques
 
                    val Data = response.getJSONArray("data")
                    if( Data.length() > 0 ) {
@@ -241,14 +242,14 @@ class AnswerSheetActivity : AppCompatActivity() {
                 val alertDialog = AlertDialog.Builder(this)
                 alertDialog.setTitle(resources.getString(R.string.alert))
                 alertDialog.setMessage("Quit Answer Sheet?")
-                alertDialog.setPositiveButton("Quit", DialogInterface.OnClickListener { dialogInterface, i ->
+                alertDialog.setPositiveButton("Quit", { dialogInterface, i ->
 
                     dialogInterface.dismiss()
 
                     finish()
 
                 })
-                alertDialog.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialogInterface, i ->
+                alertDialog.setNegativeButton("Cancel", { dialogInterface, i ->
 
                     dialogInterface.dismiss()
 

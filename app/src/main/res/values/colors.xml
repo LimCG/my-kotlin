@@ -4,4 +4,9 @@
     <color name="primaryLightColor">#56c8d8</color>
     <color name="colorPrimaryDark">#006978</color>
     <color name="colorAccent">#000000</color>
+
+    <color name="colorBackground">#0097a7</color>
+    <color name="colorSplashText">#F0F0F0</color>
+    <color name="colorProgressBar">#FFCE511C</color>
+    <color name="colorTextView">#83898E</color>
 </resources>
